@@ -9,8 +9,11 @@ const express = require('express')
     , Auth0Strategy = require('passport-auth0')
     , massive = require('massive')
 
-    app.use(bodyParser.json());
-    app.use(cors());
+app.use(bodyParser.json());
+app.use(cors());
 
+const {
+    SERVER_PORT
+} = process.env
 
-    app.listen(3005, () => console.log('Play time!'));
+app.listen(SERVER_PORT, () => console.log(`Play time!`))
